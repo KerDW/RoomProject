@@ -13,13 +13,16 @@ import com.example.roomproj.db.AstronautasDatabase;
 import java.util.List;
 
 public class AstronautasViewModel extends AndroidViewModel {
+
     private AstronautaDao astronautaDao;
     private LiveData<List<Astronauta>> astronautasLiveData;
+
 
     public AstronautasViewModel(@NonNull Application application) {
         super(application);
         astronautaDao = AstronautasDatabase.getDatabase(application).astronautaDao();
         astronautasLiveData = astronautaDao.getAllAstronautas();
+
     }
 
     public LiveData<List<Astronauta>> getAstronautasList() {

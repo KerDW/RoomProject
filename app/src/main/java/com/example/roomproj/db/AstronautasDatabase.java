@@ -47,15 +47,9 @@ public abstract class AstronautasDatabase extends RoomDatabase {
                 AstronautaDao dao = INSTANCE.astronautaDao();
                 dao.deleteAll();
 
-                Astronauta as = new Astronauta();
-                as.name = "asd";
-                as.age = 2;
-                as.address = "c/ false 123";
+                Astronauta as = new Astronauta("asd", "c/ false 123", 2);
                 dao.insert(as);
-                as = new Astronauta();
-                as.name = "gsdgfsgf";
-                as.age = 45;
-                as.address = "c/ true 123";
+                as = new Astronauta("gsdgfsgf", "c/ true 123", 45);
                 dao.insert(as);
             });
         }

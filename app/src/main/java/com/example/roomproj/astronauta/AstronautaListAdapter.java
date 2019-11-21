@@ -39,15 +39,14 @@ public class AstronautaListAdapter extends RecyclerView.Adapter<AstronautaListAd
     public void onBindViewHolder(AstronautaViewHolder holder, int position) {
         if (mAstronautas != null) {
             Astronauta current = mAstronautas.get(position);
-            // name here was set as a get() method
-            holder.astronautaItemView.setText(current.name);
+            holder.astronautaItemView.setText(current.getName());
         } else {
             // Covers the case of data not being ready yet.
             holder.astronautaItemView.setText("No Word");
         }
     }
 
-    void setAstronautas(List<Astronauta> astronautas){
+    public void setAstronautas(List<Astronauta> astronautas){
         mAstronautas = astronautas;
         notifyDataSetChanged();
     }
