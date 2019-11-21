@@ -27,7 +27,7 @@ public abstract class AstronautasDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             AstronautasDatabase.class, "astronautas_database")
-                            .build();
+                            .addCallback(sRoomDatabaseCallback).build();
                 }
             }
         }
@@ -48,8 +48,14 @@ public abstract class AstronautasDatabase extends RoomDatabase {
                 dao.deleteAll();
 
                 Astronauta as = new Astronauta();
+                as.name = "asd";
+                as.age = 2;
+                as.address = "c/ false 123";
                 dao.insert(as);
                 as = new Astronauta();
+                as.name = "gsdgfsgf";
+                as.age = 45;
+                as.address = "c/ true 123";
                 dao.insert(as);
             });
         }
