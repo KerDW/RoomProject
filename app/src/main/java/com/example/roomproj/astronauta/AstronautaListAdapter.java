@@ -47,7 +47,7 @@ public class AstronautaListAdapter extends RecyclerView.Adapter<AstronautaListAd
         }
     }
 
-    void setWords(List<Astronauta> astronautas){
+    void setAstronautas(List<Astronauta> astronautas){
         mAstronautas = astronautas;
         notifyDataSetChanged();
     }
