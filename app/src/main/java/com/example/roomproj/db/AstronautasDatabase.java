@@ -12,14 +12,14 @@ import java.util.concurrent.Executors;
 @Database(entities = {Astronauta.class}, version = 1, exportSchema = false)
 public abstract class AstronautasDatabase extends RoomDatabase {
 
-    public abstract AstronautaDao astronautaDaoDao();
+    public abstract AstronautaDao astronautaDao();
 
     private static volatile AstronautasDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
     static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static AstronautasDatabase getDatabase(final Context context) {
+    public static AstronautasDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (AstronautasDatabase.class) {
                 if (INSTANCE == null) {
