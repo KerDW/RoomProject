@@ -9,10 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.roomproj.astronauta.AstronautaListAdapter;
-import com.example.roomproj.astronauta.AstronautasViewModel;
-import com.example.roomproj.db.Astronauta;
-
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {

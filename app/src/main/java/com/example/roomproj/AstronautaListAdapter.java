@@ -1,4 +1,4 @@
-package com.example.roomproj.astronauta;
+package com.example.roomproj;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,9 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.roomproj.R;
-import com.example.roomproj.db.Astronauta;
 
 import java.util.List;
 
@@ -42,7 +39,7 @@ public class AstronautaListAdapter extends RecyclerView.Adapter<AstronautaListAd
             holder.astronautaItemView.setText(current.getName());
         } else {
             // Covers the case of data not being ready yet.
-            holder.astronautaItemView.setText("No Word");
+            holder.astronautaItemView.setText("No Astronauta");
         }
     }
 

@@ -1,14 +1,10 @@
-package com.example.roomproj.astronauta;
+package com.example.roomproj;
 
 import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-
-import com.example.roomproj.db.Astronauta;
-import com.example.roomproj.db.AstronautaDao;
-import com.example.roomproj.db.AstronautasDatabase;
 
 import java.util.List;
 

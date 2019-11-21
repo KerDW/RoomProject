@@ -1,4 +1,4 @@
-package com.example.roomproj.astronauta;
+package com.example.roomproj;
 
 import androidx.appcompat.app.AppCompatActivity;
 
