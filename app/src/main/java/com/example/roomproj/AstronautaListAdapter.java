@@ -28,7 +28,7 @@ public class AstronautaListAdapter extends RecyclerView.Adapter<AstronautaListAd
 
     @Override
     public AstronautaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.activity_main, parent, false);
+        View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
         return new AstronautaViewHolder(itemView);
     }
 
