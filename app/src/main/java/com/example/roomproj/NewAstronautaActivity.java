@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.roomproj.R;
-
 public class NewAstronautaActivity extends AppCompatActivity {
 
     public static final String EXTRA_REPLY_NAME = "com.example.android.astronautanamelistsql.REPLY";
@@ -38,7 +36,7 @@ public class NewAstronautaActivity extends AppCompatActivity {
                 } else {
                     String name = mEditNameView.getText().toString();
                     String address = mEditAddressView.getText().toString();
-                    String age = mEditAgeView.getText().toString();
+                    int age = Integer.parseInt(mEditAgeView.getText().toString());
 
                     replyIntent.putExtra(EXTRA_REPLY_NAME, name);
                     replyIntent.putExtra(EXTRA_REPLY_ADDRESS, address);
