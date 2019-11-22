@@ -27,7 +27,7 @@ public abstract class AstronautasDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             AstronautasDatabase.class, "astronautas_database")
-                            .addCallback(sRoomDatabaseCallback).build();
+                            .addCallback(sRoomDatabaseCallback).allowMainThreadQueries().build();
                 }
             }
         }
