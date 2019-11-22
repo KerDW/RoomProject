@@ -4,6 +4,17 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/edit_astronauta_name_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_marginBottom="@dimen/big_padding"
+        android:fontFamily="sans-serif-light"
+        android:padding="@dimen/small_padding"
+        android:text="Name:"
+        android:textColor="#050505"
+        android:textSize="18sp" />
     <EditText
         android:id="@+id/edit_astronauta_name"
         android:layout_width="match_parent"
@@ -14,6 +25,17 @@
         android:layout_marginBottom="@dimen/big_padding"
         android:layout_marginTop="@dimen/big_padding"
         android:textSize="18sp" />
+    <TextView
+        android:id="@+id/edit_astronauta_address_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_marginBottom="@dimen/big_padding"
+        android:fontFamily="sans-serif-light"
+        android:padding="@dimen/small_padding"
+        android:text="Address:"
+        android:textColor="#050505"
+        android:textSize="18sp" />
     <EditText
         android:id="@+id/edit_astronauta_address"
         android:layout_width="match_parent"
@@ -23,6 +45,17 @@
         android:padding="@dimen/small_padding"
         android:layout_marginBottom="@dimen/big_padding"
         android:layout_marginTop="@dimen/big_padding"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/edit_astronauta_age_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_marginBottom="@dimen/big_padding"
+        android:fontFamily="sans-serif-light"
+        android:padding="@dimen/small_padding"
+        android:text="Age:"
+        android:textColor="#050505"
         android:textSize="18sp" />
     <EditText
         android:id="@+id/edit_astronauta_age"
