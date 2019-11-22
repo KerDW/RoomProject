@@ -41,17 +41,26 @@ public abstract class AstronautasDatabase extends RoomDatabase {
 
             // If you want to keep data through app restarts,
             // comment out the following block
-            databaseWriteExecutor.execute(() -> {
-                // Populate the database in the background.
-                // If you want to start with more words, just add them.
-                AstronautaDao dao = INSTANCE.astronautaDao();
-                dao.deleteAll();
-
-                Astronauta as = new Astronauta("asd", "c/ false 123", 2);
-                dao.insert(as);
-                as = new Astronauta("gsdgfsgf", "c/ true 123", 45);
-                dao.insert(as);
-            });
+//            databaseWriteExecutor.execute(() -> {
+//                // Populate the database in the background.
+//                // If you want to start with more words, just add them.
+//                AstronautaDao dao = INSTANCE.astronautaDao();
+//                // dao.deleteAll();
+//
+//                Astronauta as = new Astronauta("asd", "c/ false 123", 2);
+//                dao.insert(as);
+//                as = new Astronauta("gsdgfsgf", "c/ true 123", 45);
+//                dao.insert(as);
+//                dao.insert(as);
+//                dao.insert(as);
+//                dao.insert(as);
+//                dao.insert(as);
+//                dao.insert(as);
+//                dao.insert(as);
+//                dao.insert(as);
+//                dao.insert(as);
+//                dao.insert(as);
+//            });
         }
     };
 }
