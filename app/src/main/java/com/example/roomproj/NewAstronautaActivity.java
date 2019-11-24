@@ -30,14 +30,18 @@ public class NewAstronautaActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         if(intent.getExtras() != null){
-            mEditNameView.setText(((Astronauta) intent.getSerializableExtra("ASTRO")).name);
-            mEditAddressView.setText(((Astronauta) intent.getSerializableExtra("ASTRO")).address);
-            mEditAgeView.setText(((Astronauta) intent.getSerializableExtra("ASTRO")).age);
 
+            Astronauta a = ((Astronauta) intent.getSerializableExtra("ASTRO"));
+            String age = String.valueOf(a.age);
+
+            mEditNameView.setText(a.name);
+            mEditAddressView.setText(a.address);
+            mEditAgeView.setText(age);
 
         }
 
         final Button button = findViewById(R.id.button_save);
+
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent replyIntent = new Intent();
