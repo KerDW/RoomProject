@@ -5,9 +5,20 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
+import java.io.Serializable;
 
 @Entity(tableName = "astronautas", indices = {@Index(value = "name", unique = true)})
-public class Astronauta {
+public class Astronauta implements Serializable {
+
+    @Ignore
+    public Astronauta(@NonNull int id, @NonNull String name, String address, int age) {
+
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.age = age;
+
+    }
 
     public Astronauta(@NonNull String name, String address, int age) {
 
