@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements AstronautaListAda
 
     private AstronautasViewModel mAstronautaViewModel;
     public static final int NEW_ASTRONAUTA_ACTIVITY_REQUEST_CODE = 1;
+    public static final int EDIT_ASTRONAUTA_ACTIVITY_REQUEST_CODE = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,9 @@ public class MainActivity extends AppCompatActivity implements AstronautaListAda
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(MainActivity.this, NewAstronautaActivity.class);
-        startActivityForResult(intent, NEW_ASTRONAUTA_ACTIVITY_REQUEST_CODE);
+        Astronauta astro = mAstronautaViewModel.getAstronautasList().getValue().get(position);
+        intent.putExtra("ASTRO", astro);
+        startActivityForResult(intent, EDIT_ASTRONAUTA_ACTIVITY_REQUEST_CODE);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -5,8 +5,10 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "astronautas")
-public class Astronauta {
+public class Astronauta implements Serializable {
 
     public Astronauta(@NonNull String name, String address, int age) {
 
