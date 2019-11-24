@@ -16,7 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AstronautaListAdapter.OnItemClicked {
 
     private AstronautasViewModel mAstronautaViewModel;
     public static final int NEW_ASTRONAUTA_ACTIVITY_REQUEST_CODE = 1;
@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         final AstronautaListAdapter adapter = new AstronautaListAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        adapter.setOnClick(MainActivity.this);
 
         mAstronautaViewModel = new ViewModelProvider(this).get(AstronautasViewModel.class);
 
@@ -50,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, NEW_ASTRONAUTA_ACTIVITY_REQUEST_CODE);
             }
         });
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(MainActivity.this, NewAstronautaActivity.class);
+        startActivityForResult(intent, NEW_ASTRONAUTA_ACTIVITY_REQUEST_CODE);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
