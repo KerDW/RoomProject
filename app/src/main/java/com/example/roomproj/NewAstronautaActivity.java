@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 public class NewAstronautaActivity extends AppCompatActivity {
 
+    public static final String EXTRA_REPLY_ID = "com.example.android.astronautaidlistsql.REPLY";
     public static final String EXTRA_REPLY_NAME = "com.example.android.astronautanamelistsql.REPLY";
     public static final String EXTRA_REPLY_ADDRESS = "com.example.android.astronautaaddresslistsql.REPLY";
     public static final String EXTRA_REPLY_AGE = "com.example.android.astronautaagelistsql.REPLY";
@@ -18,6 +19,7 @@ public class NewAstronautaActivity extends AppCompatActivity {
     private EditText mEditNameView;
     private EditText mEditAddressView;
     private EditText mEditAgeView;
+    private int updateAstroId;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class NewAstronautaActivity extends AppCompatActivity {
         if(intent.getExtras() != null){
 
             Astronauta a = ((Astronauta) intent.getSerializableExtra("ASTRO"));
+            updateAstroId = a.id;
             String age = String.valueOf(a.age);
 
             mEditNameView.setText(a.name);
@@ -52,6 +55,7 @@ public class NewAstronautaActivity extends AppCompatActivity {
                     String address = mEditAddressView.getText().toString();
                     int age = Integer.parseInt(mEditAgeView.getText().toString());
 
+                    replyIntent.putExtra(EXTRA_REPLY_ID, updateAstroId);
                     replyIntent.putExtra(EXTRA_REPLY_NAME, name);
                     replyIntent.putExtra(EXTRA_REPLY_ADDRESS, address);
                     replyIntent.putExtra(EXTRA_REPLY_AGE, age);
