@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -55,7 +56,17 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        outerIf:
         if (requestCode == NEW_ASTRONAUTA_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
+            for (Astronauta a : mAstronautaViewModel.getAstronautasList().getValue()) {
+                if(a.name.equals(data.getStringExtra(NewAstronautaActivity.EXTRA_REPLY_NAME))){
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "An astronauta with that name already exists.",
+                            Toast.LENGTH_LONG).show();
+                    break outerIf;
+                }
+            }
             Astronauta astro = new Astronauta(data.getStringExtra(NewAstronautaActivity.EXTRA_REPLY_NAME), data.getStringExtra(NewAstronautaActivity.EXTRA_REPLY_ADDRESS), data.getIntExtra(NewAstronautaActivity.EXTRA_REPLY_AGE, 0));
             mAstronautaViewModel.insert(astro);
         } else {
