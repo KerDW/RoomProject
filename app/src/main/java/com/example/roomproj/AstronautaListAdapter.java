@@ -23,6 +23,11 @@ public class AstronautaListAdapter extends RecyclerView.Adapter<AstronautaListAd
 
     private final LayoutInflater mInflater;
     private List<Astronauta> mAstronautas; // Cached copy of words
+    private OnItemClicked onClick;
+
+    public interface OnItemClicked {
+        void onItemClick(int position);
+    }
 
     public AstronautaListAdapter(Context context) { mInflater = LayoutInflater.from(context); }
 
@@ -37,10 +42,21 @@ public class AstronautaListAdapter extends RecyclerView.Adapter<AstronautaListAd
         if (mAstronautas != null) {
             Astronauta current = mAstronautas.get(position);
             holder.astronautaItemView.setText(current.getName());
+            holder.astronautaItemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onClick.onItemClick(position);
+                }
+            });
         } else {
             // Covers the case of data not being ready yet.
             holder.astronautaItemView.setText("No Astronauta");
         }
+    }
+
+    public void setOnClick(OnItemClicked onClick)
+    {
+        this.onClick = onClick;
     }
 
     public void setAstronautas(List<Astronauta> astronautas){
