@@ -59,7 +59,7 @@ public class NewAstronautaActivity extends AppCompatActivity {
 
                 mAstronautaViewModel.delete(a);
 
-                setResult(RESULT_CANCELED, replyIntent);
+                setResult(1, replyIntent);
                 finish();
             }
         });
