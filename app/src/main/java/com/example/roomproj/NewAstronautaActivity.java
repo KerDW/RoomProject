@@ -1,6 +1,7 @@
 package com.example.roomproj;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +20,9 @@ public class NewAstronautaActivity extends AppCompatActivity {
     private EditText mEditNameView;
     private EditText mEditAddressView;
     private EditText mEditAgeView;
+    private Button deleteButton;
     private int updateAstroId;
+    private AstronautasViewModel mAstronautaViewModel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,10 +31,15 @@ public class NewAstronautaActivity extends AppCompatActivity {
         mEditNameView = findViewById(R.id.edit_astronauta_name);
         mEditAddressView = findViewById(R.id.edit_astronauta_address);
         mEditAgeView = findViewById(R.id.edit_astronauta_age);
+        deleteButton = findViewById(R.id.button_delete);
+
+        mAstronautaViewModel = new ViewModelProvider(this).get(AstronautasViewModel.class);
 
         Intent intent = getIntent();
 
         if(intent.getExtras() != null){
+
+            deleteButton.setVisibility(View.VISIBLE);
 
             Astronauta a = ((Astronauta) intent.getSerializableExtra("ASTRO"));
             updateAstroId = a.id;
@@ -42,6 +50,19 @@ public class NewAstronautaActivity extends AppCompatActivity {
             mEditAgeView.setText(age);
 
         }
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent replyIntent = new Intent();
+
+                Astronauta a = new Astronauta(updateAstroId, "", "", 0);
+
+                mAstronautaViewModel.delete(a);
+
+                setResult(1, replyIntent);
+                finish();
+            }
+        });
 
         final Button button = findViewById(R.id.button_save);
 

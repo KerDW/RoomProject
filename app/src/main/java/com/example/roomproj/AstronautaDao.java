@@ -2,6 +2,7 @@ package com.example.roomproj;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -26,6 +27,9 @@ public interface AstronautaDao {
 
     @Update(onConflict = OnConflictStrategy.IGNORE)
     void update(Astronauta astronauta);
+
+    @Delete
+    void delete (Astronauta astronauta);
 
     @Query("DELETE FROM astronautas")
     void deleteAll();

@@ -70,12 +70,27 @@ public class MainActivity extends AppCompatActivity implements AstronautaListAda
         if (requestCode == NEW_ASTRONAUTA_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
             Astronauta astro = new Astronauta(data.getStringExtra(NewAstronautaActivity.EXTRA_REPLY_NAME), data.getStringExtra(NewAstronautaActivity.EXTRA_REPLY_ADDRESS), data.getIntExtra(NewAstronautaActivity.EXTRA_REPLY_AGE, 0));
             mAstronautaViewModel.insert(astro);
+
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Astronauta created.",
+                    Toast.LENGTH_LONG).show();
         } else if(requestCode == EDIT_ASTRONAUTA_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK){
 
             Astronauta astro = new Astronauta(data.getIntExtra(NewAstronautaActivity.EXTRA_REPLY_ID, 0), data.getStringExtra(NewAstronautaActivity.EXTRA_REPLY_NAME), data.getStringExtra(NewAstronautaActivity.EXTRA_REPLY_ADDRESS), data.getIntExtra(NewAstronautaActivity.EXTRA_REPLY_AGE, 0));
             mAstronautaViewModel.update(astro);
 
-        } else {
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Astronauta edited.",
+                    Toast.LENGTH_LONG).show();
+
+        } else if (requestCode == EDIT_ASTRONAUTA_ACTIVITY_REQUEST_CODE && resultCode == 1){
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Astronauta deleted successfully.",
+                    Toast.LENGTH_LONG).show();
+        } else{
             Toast.makeText(
                     getApplicationContext(),
                     R.string.empty_not_saved,

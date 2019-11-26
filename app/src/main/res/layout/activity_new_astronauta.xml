@@ -9,49 +9,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/big_padding"
-        android:layout_marginBottom="@dimen/big_padding"
         android:fontFamily="sans-serif-light"
         android:padding="@dimen/small_padding"
         android:text="Name:"
         android:textColor="#050505"
         android:textSize="18sp" />
+
     <EditText
         android:id="@+id/edit_astronauta_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="62dp"
         android:fontFamily="sans-serif-light"
         android:inputType="textAutoComplete"
-        android:padding="@dimen/small_padding"
-        android:layout_marginBottom="@dimen/big_padding"
-        android:layout_marginTop="@dimen/big_padding"
         android:textSize="18sp" />
+
     <TextView
         android:id="@+id/edit_astronauta_address_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/big_padding"
-        android:layout_marginBottom="@dimen/big_padding"
         android:fontFamily="sans-serif-light"
         android:padding="@dimen/small_padding"
         android:text="Address:"
         android:textColor="#050505"
         android:textSize="18sp" />
+
     <EditText
         android:id="@+id/edit_astronauta_address"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="62dp"
         android:fontFamily="sans-serif-light"
         android:inputType="textAutoComplete"
-        android:padding="@dimen/small_padding"
-        android:layout_marginBottom="@dimen/big_padding"
-        android:layout_marginTop="@dimen/big_padding"
         android:textSize="18sp" />
     <TextView
         android:id="@+id/edit_astronauta_age_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/big_padding"
-        android:layout_marginBottom="@dimen/big_padding"
         android:fontFamily="sans-serif-light"
         android:padding="@dimen/small_padding"
         android:text="Age:"
@@ -60,19 +54,33 @@
     <EditText
         android:id="@+id/edit_astronauta_age"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="62dp"
         android:fontFamily="sans-serif-light"
         android:inputType="number"
-        android:padding="@dimen/small_padding"
         android:layout_marginBottom="@dimen/big_padding"
-        android:layout_marginTop="@dimen/big_padding"
         android:textSize="18sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Delete"
+        android:visibility="invisible"
+        android:layout_marginBottom="@dimen/small_padding"
+        android:textColor="@color/buttonLabel" />
 
     <Button
         android:id="@+id/button_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="#228B22"
+        android:layout_marginBottom="@dimen/small_padding"
         android:text="@string/button_save"
         android:textColor="@color/buttonLabel" />
 
