@@ -29,6 +29,8 @@ public class AstronautasViewModel extends AndroidViewModel {
         astronautaDao.insert(astronautas);
     }
 
+    public void delete (Astronauta astronauta) { astronautaDao.delete(astronauta); }
+
     public void update(Astronauta astronauta) {
         astronautaDao.update(astronauta);
     }

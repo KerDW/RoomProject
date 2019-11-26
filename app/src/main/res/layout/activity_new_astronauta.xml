@@ -66,10 +66,21 @@
         android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/button_save"
+        android:id="@+id/button_delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
+        android:text="Delete"
+        android:visibility="invisible"
+        android:layout_marginBottom="@dimen/small_padding"
+        android:textColor="@color/buttonLabel" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#228B22"
+        android:layout_marginBottom="@dimen/small_padding"
         android:text="@string/button_save"
         android:textColor="@color/buttonLabel" />
 
